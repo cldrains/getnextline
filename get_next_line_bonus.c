@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tevers <tevers@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/21 17:30:03 by tevers            #+#    #+#             */
-/*   Updated: 2023/02/23 04:32:29 by tevers           ###   ########.fr       */
+/*   Created: 2023/02/23 04:10:44 by tevers            #+#    #+#             */
+/*   Updated: 2023/02/23 04:34:46 by tevers           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_next(char *buf)
 {
@@ -80,15 +80,15 @@ char	*ft_readsave(int fd, char *left_str)
 
 char	*get_next_line(int fd)
 {
-	static char	*buf;
+	static char	*buf[MAX_FD];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > MAX_FD)
 		return (NULL);
-	buf = ft_readsave(fd, buf);
-	if (!buf)
+	buf[fd] = ft_readsave(fd, buf[fd]);
+	if (!buf[fd])
 		return (NULL);
-	line = ft_line(buf);
-	buf = ft_next(buf);
+	line = ft_line(buf[fd]);
+	buf[fd] = ft_next(buf[fd]);
 	return (line);
 }

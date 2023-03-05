@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tevers <tevers@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 02:51:23 by tevers            #+#    #+#             */
-/*   Updated: 2023/02/23 02:51:48 by tevers           ###   ########.fr       */
+/*   Created: 2023/02/23 04:11:13 by tevers            #+#    #+#             */
+/*   Updated: 2023/02/23 04:16:21 by tevers           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_calloc(size_t num, size_t size)
 {
